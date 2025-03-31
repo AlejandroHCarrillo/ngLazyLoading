@@ -1,5 +1,7 @@
 body {
-    font-family: Arial, sans-serif;
+    display: grid;
+    place-items: center;     /* Centers both horizontally and vertically */
+    height: 100vh;           /* Full viewport height */
     margin: 0;
     padding: 0;
 }
@@ -11,13 +13,14 @@ header, footer {
 }
 
 .container {
-    display: flex;
+    display: flex;    
 }
 
 .left-menu {
     width: 20%;
     background-color: #e9ecef;
     padding: 1em;
+    min-height: 17rem;
 }
 
 .left-menu ul {
@@ -35,8 +38,10 @@ header, footer {
 }
 
 main {
-    width: 60%;
+    width: 100%;
     padding: 1em;
+    margin:0 auto;
+    padding: 0;
 }
 
 .right-section {

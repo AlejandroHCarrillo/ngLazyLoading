@@ -1,17 +1,19 @@
 <main class="main">
   <div class="content">
     <header class="header">
-      <h1>HEADER Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
+      <app-topbar [title]="title"></app-topbar>
     </header>
     <div class="container">
-      <div class="left-menu">LEFT MENU </div>
-      <main>MAIN
+      <div class="left-menu"><app-left-menu [menuList]="menu" ></app-left-menu>
+      </div>
+      <main>
         <router-outlet />
       </main>
-      <aside class="right-section">RIGHT SIDE</aside>
+      <aside class="right-section"><app-side-bar-right></app-side-bar-right></aside>
     </div>
-    <footer>FOOTER</footer>
+    <footer>
+      <app-footer></app-footer>
+    </footer>
   </div>
 </main>
 

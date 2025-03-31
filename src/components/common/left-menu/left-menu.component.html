@@ -1,1 +1,13 @@
 <p>left-menu works!</p>
+{{menuList.length}}
+
+<ul>
+    <li *ngFor="let item of menuList let index">
+        {{item.label}}
+      <a [routerLink]="item.route">
+        <i *ngIf="item.icon" class="{{ item.icon }}"></i>
+        {{ item.label }}
+      </a>
+      <app-left-menu *ngIf="item.children" [menuList]="item.children"></app-left-menu>
+    </li>
+  </ul>
