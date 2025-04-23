@@ -3,6 +3,17 @@ Ejemplo de un proyecto Angular usando lazy loading
 
 # Generaladmin
 
+## Aplicando Angular template
+
+https://www.creative-tim.com/product/material-dashboard-angular2?tracking=first-time#
+
+## Agregando bootstrap ##
+
+https://demos.creative-tim.com/material-dashboard-angular2/#/documentation/buttons
+
+
+
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
 
 ## Development server
