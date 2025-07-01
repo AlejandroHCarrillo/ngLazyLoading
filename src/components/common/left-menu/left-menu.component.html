@@ -11,14 +11,18 @@
       <app-left-menu *ngIf="item.children" [menuList]="item.children"></app-left-menu>
     </li>
   </ul> -->
-
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">Core</div>
-                <a class="nav-link" href="index.html">
+                <a routerLink="" class="nav-link">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Dashboard
+                    Inicio
                 </a>
+                <a routerLink="users" class="nav-link" >
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    Usuarios
+                </a>
+
                 <div class="sb-sidenav-menu-heading">Interface</div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -73,3 +77,8 @@
                 </a>
             </div>
         </div>
+        <div class="sb-sidenav-footer">
+            <div class="small">Logged in as:</div>
+            Dummy admin user
+        </div>
+

@@ -12,8 +12,11 @@ https://www.creative-tim.com/product/material-dashboard-angular2?tracking=first-
 https://demos.creative-tim.com/material-dashboard-angular2/#/documentation/buttons
 
 
+Para generar un componente en una ubicacion especifica, sin test, sin estilos y solo simulando la creacion de archivos
 
-
+```
+ng g c components/common/breadcrums --skip-tests -s --dry-run
+```
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
 
 ## Development server
