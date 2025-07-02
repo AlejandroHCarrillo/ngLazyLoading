@@ -400,12 +400,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-.angular/cache/19.2.5/generaladmin/.tsbuildinfo
-.angular/cache/19.2.5/generaladmin/.tsbuildinfo
-.angular/cache/19.2.5/generaladmin/.tsbuildinfo
-.angular/cache/19.2.5/generaladmin/vite/deps/@angular_router.js.map
-.angular/cache/19.2.5/generaladmin/vite/deps/@angular_router.js
-.angular/cache/19.2.5/generaladmin/vite/deps/@angular_platform-browser.js
-.angular/cache/19.2.5/generaladmin/vite/deps/@angular_platform-browser.js
-.angular/cache/19.2.5/generaladmin/vite/deps/@angular_core.js
-.angular/cache/19.2.5/generaladmin/vite/deps/@angular_core.js
+.angular/cache
