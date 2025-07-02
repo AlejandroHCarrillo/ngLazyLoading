@@ -21,6 +21,27 @@ export class MainLayoutComponent implements OnInit {
 
   filloutMenu(){
     this.menu = [
+                  { label: 'Admin', 
+                    route: '',
+                    icon: 'fa-tachometer-alt',
+                    children : [
+                      {
+                        label: 'Cotos', 
+                        route: 'cotos',
+                        icon: 'fa-tachometer-alt',                      
+                      }, 
+                      {
+                        label: 'Usuarios', 
+                        route: 'usuarios',
+                        icon: 'fa-tachometer-alt',                      
+                      }, 
+                      {
+                        label: 'Residentes', 
+                        route: 'residentes',
+                        icon: 'fa-tachometer-alt',                      
+                      }, 
+                    ],
+                  },
                   { label: 'Inicio', 
                     route: 'home',
                     icon: 'fa-tachometer-alt'

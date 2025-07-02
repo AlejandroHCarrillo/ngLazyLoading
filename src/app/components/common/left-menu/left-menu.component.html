@@ -3,25 +3,50 @@
 
 <div class="sb-sidenav-menu">
     <div class="nav">
-        <div class="sb-sidenav-menu-heading">General Admin</div>
+                <!-- 
+                <div class="sb-sidenav-menu-heading">Administracion</div>
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Catalogos
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                        <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                    </nav>
+                </div> -->
 
-<!-- <ul> -->
-    @for (item of menuList; track $index) {
-        <!-- <li > -->
-            <!-- {{item.label}} -->
-            <a [routerLink]="item.route" class="nav-link">
-                @if (item.icon) { 
-                    <div class="sb-nav-link-icon"><i class="fas {{ item.icon }}"></i></div> 
-                    <!-- <i class="{{ item.icon }}"></i> -->
-                }
-                {{ item.label }}
+
+
+        <div class="sb-sidenav-menu-heading">General Admin</div>
+        
+    @for (menuItem of menuList; track $index) {
+        @if (menuItem.children?.length) {
+            <div class="sb-sidenav-menu-heading">Administracion</div>
+            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                Catalogos
+                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
             </a>
-            @if (item.children) {
-                <app-left-menu [menuList]="item.children"></app-left-menu>
-            }
-        <!-- </li> -->
+            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                @for(submenuItem of menuItem.children; track $index){
+                            <a [routerLink]="submenuItem.route" class="nav-link">
+                                {{ submenuItem.label }}
+                            </a>
+                }
+                </nav>
+            </div>
+        } @else {            
+            <a [routerLink]="menuItem.route" class="nav-link">
+                @if (menuItem.icon) { 
+                    <div class="sb-nav-link-icon"><i class="fas {{ menuItem.icon }}"></i></div> 
+                }
+                {{ menuItem.label }}
+            </a>
+        }
     }
-  <!-- </ul>  -->
 
     </div>
 </div>

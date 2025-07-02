@@ -401,3 +401,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 .angular/cache
+.angular/cache/19.2.5/generaladmin/.tsbuildinfo
