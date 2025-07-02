@@ -39,14 +39,14 @@
 
 
 import { Routes } from '@angular/router';
-import { authGuard } from '../guards/authGuard';
+import { authGuard } from './guards/authGuard';
 
 export const routes: Routes = [
 // Rutas no protegidas
   {
     path: '',
     loadComponent: () =>
-      import('../components/auth/auth-layout.component').then(m => m.AuthLayoutComponent),
+      import('../app/auth/auth-layout.component').then(m => m.AuthLayoutComponent),
     children: [
             {path: 'login',
                 loadComponent: () =>
@@ -66,15 +66,104 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('../pages/main-layout.component').then(m => m.MainLayoutComponent),
+      import('./pages/main-layout.component').then(m => m.MainLayoutComponent),
     children: [
       {
         path: 'home',
         loadComponent: () =>
-            import('../components/common/home/home.component').then(m => m.HomeComponent),
+            import('./pages/home/home.component').then(m => m.HomeComponent),
             canActivate: [authGuard],
       },
-      // otras rutas protegidas
+      {
+        path: 'comunicados',
+        loadComponent: () =>
+            import('./pages/comunicados/comunicados-list.component').then(m => m.ComunicadosListComponent),
+            canActivate: [authGuard],
+      },
+      {
+        path: 'documentos',
+        loadComponent: () =>
+            import('./pages/documentos/documentos-list.component').then(m => m.DocumentosListComponent),
+            canActivate: [authGuard],
+      },
+      {
+        path: 'pagos',
+        loadComponent: () =>
+            import('./pages/pagos/pagos-list.component').then(m => m.PagosListComponent),
+            canActivate: [authGuard],
+      },
+      {
+        path: 'estadodecuenta',
+        loadComponent: () =>
+            import('./pages/estadocuenta/estadocuenta.component').then(m => m.EstadocuentaComponent),
+            canActivate: [authGuard],
+      },
+      {
+        path: 'amenidades',
+        loadComponent: () =>
+            import('./pages/amenidades/amenidades-list.component').then(m => m.AmenidadesListComponent),
+            canActivate: [authGuard],
+      },
+      {
+        path: 'finanzas',
+        loadComponent: () =>
+            import('./pages/finanzas/finanzas-list.component').then(m => m.FinanzasListComponent),
+            canActivate: [authGuard],
+      },
+      {
+        path: 'tickets',
+        loadComponent: () =>
+            import('./pages/tickets/tickets-list.component').then(m => m.TicketsListComponent),
+            canActivate: [authGuard],
+      },
+      {
+        path: 'morosos',
+        loadComponent: () =>
+            import('./pages/morosos/morosos-list.component').then(m => m.MorososListComponent),
+            canActivate: [authGuard],
+      },
+      {
+        path: 'myprofile',
+        loadComponent: () =>
+            import('./pages/perfil/perfilusuario.component').then(m => m.PerfilusuarioComponent),
+            canActivate: [authGuard],
+      },
+
+
+      // otras rutas protegidas de usuario
+    ],
+  },
+  // Rutas de administracion
+  {
+    path: '',
+    loadComponent: () =>
+      import('./pages/main-layout.component').then(m => m.MainLayoutComponent),
+    children: [
+      {
+        path: 'usuarios',
+        loadComponent: () =>
+            import('./admin/usuarios/usuarios-list.component').then(m => m.UsuariosListComponent),
+            canActivate: [authGuard],
+      },
+      {
+        path: 'cotos',
+        loadComponent: () =>
+            import('./admin/cotos/cotos-list.component').then(m => m.CotosListComponent),
+            canActivate: [authGuard],
+      },
+      {
+        path: 'residentes',
+        loadComponent: () =>
+            import('./admin/residentes/residentes-list.component').then(m => m.ResidentesListComponent),
+            canActivate: [authGuard],
+      },
+      // otras rutas protegidas de administracion
+        // Ruta por defecto para no encontradas
+      {
+        path: '**',
+        loadComponent: () =>
+          import('./pages/notfound/notfound.component').then(m => m.NotfoundComponent),
+      },
     ],
   },
 ];
