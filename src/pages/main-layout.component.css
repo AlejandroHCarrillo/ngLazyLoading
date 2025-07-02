@@ -1,0 +1,57 @@
+body {
+    display: grid;
+    place-items: center;     /* Centers both horizontally and vertically */
+    height: 100vh;           /* Full viewport height */
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 1em;
+}
+
+.container {
+    display: flex;    
+}
+
+.left-menu {
+    width: 20%;
+    background-color: #e9ecef;
+    padding: 1em;
+    min-height: 17rem;
+}
+
+.left-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.left-menu li {
+    margin: 0.5em 0;
+}
+
+.left-menu a {
+    text-decoration: none;
+    color: #000;
+}
+
+main {
+    width: 100%;
+    padding: 1em;
+    margin:0 auto;
+    padding: 0;
+}
+
+.right-section {
+    width: 20%;
+    background-color: #e9ecef;
+    padding: 1em;
+}
+
+footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 1em;
+}

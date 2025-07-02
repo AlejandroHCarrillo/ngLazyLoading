@@ -39,7 +39,7 @@
 
 
 import { Routes } from '@angular/router';
-import { authGuard } from '../guards/AuthGuard';
+import { authGuard } from '../guards/authGuard';
 
 export const routes: Routes = [
 // Rutas no protegidas
@@ -50,11 +50,15 @@ export const routes: Routes = [
     children: [
             {path: 'login',
                 loadComponent: () =>
-                import('../components/auth/login/login.component').then(m => m.LoginComponent),
+                import('../app/auth/login/login.component').then(m => m.LoginComponent),
             },
             { path: 'register',
                 loadComponent: () =>
-                import('../components/auth/register/register.component').then(m => m.RegisterComponent),
+                import('../app/auth/register/register.component').then(m => m.RegisterComponent),
+            },
+            { path: 'resetpass',
+                loadComponent: () =>
+                import('../app/auth/resetpass/resetpass.component').then(m => m.ResetpassComponent),
             },
     ],
   },
