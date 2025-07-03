@@ -402,3 +402,7 @@ FodyWeavers.xsd
 *.sln.iml
 .angular/cache
 .angular/cache/19.2.5/generaladmin/.tsbuildinfo
+.angular/cache/19.2.5/generaladmin/.tsbuildinfo
+.angular/cache/19.2.5/generaladmin/.tsbuildinfo
+.angular/cache/19.2.5/generaladmin/vite/deps/_metadata.json
+.angular/cache/19.2.5/generaladmin/vite/deps_ssr/_metadata.json

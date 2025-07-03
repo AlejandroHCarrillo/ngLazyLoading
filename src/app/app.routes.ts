@@ -42,6 +42,7 @@ import { Routes } from '@angular/router';
 import { authGuard } from './guards/authGuard';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 // Rutas no protegidas
   {
     path: '',
@@ -149,6 +150,12 @@ export const routes: Routes = [
         path: 'cotos',
         loadComponent: () =>
             import('./admin/cotos/cotos-list.component').then(m => m.CotosListComponent),
+            canActivate: [authGuard],
+      },
+      {
+        path: 'coto',
+        loadComponent: () =>
+            import('./admin/cotos/coto-edit.component').then(m => m.CotoEditComponent),
             canActivate: [authGuard],
       },
       {

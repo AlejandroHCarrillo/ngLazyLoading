@@ -1,4 +1,22 @@
-<p>home works!</p>
-Esta es la pagina principal del la aplicacion, 
-se deben mostrar la ultima noticia o comunicado
-y links a los principales modulos
+<!-- Imagen principal superior -->
+<div class="top-image mb-4 banner">
+  <img src="assets/Images/Banner.jpg" class="img-fluid w-100" alt="Banner superior"/>
+</div>
+
+<!-- Grid responsivo -->
+<div class="container">
+  <div class="row g-4">
+    @for (item of items; track $index) {
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <a [routerLink]="item.link" class="text-decoration-none text-dark">
+        <div class="card h-100 text-center square-card">
+          <img [src]="item.image" class="card-img-top img-fluid" alt="{{ item.title }}">
+          <div class="card-body d-flex flex-column justify-content-center align-items-center">
+            <h5 class="card-title">{{ item.title }}</h5>
+          </div>
+        </div>
+      </a>
+    </div>            
+    }
+  </div>
+</div>

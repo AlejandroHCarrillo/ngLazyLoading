@@ -1,1 +1,19 @@
-<p>coto-edit works!</p>
+<form [formGroup]="cotoForm" (ngSubmit)="onSubmit()" class="bg-light p-4 rounded shadow-sm mx-auto">
+    <h5>Catalogo de cotos</h5>
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre del Fraccionamiento o Coto</label>
+        <input id="nombre" type="text" class="form-control" formControlName="nombre" />
+    </div>
+
+    <div class="mb-3">
+        <label for="direccion" class="form-label">Dirección</label>
+        <input id="direccion" type="text" class="form-control" formControlName="direccion" />
+    </div>
+
+    <div class="form-check mb-3">
+        <input id="estatus" type="checkbox" class="form-check-input" formControlName="estatus" />
+        <label for="estatus" class="form-check-label">Activo</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="cotoForm.invalid">Guardar</button>
+</form>

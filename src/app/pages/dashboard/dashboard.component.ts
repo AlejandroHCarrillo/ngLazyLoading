@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,6 +7,11 @@ import { Component } from '@angular/core';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
 
+  constructor(private viewportScroller: ViewportScroller) {}
+
+  ngOnInit(): void {
+    this.viewportScroller.scrollToPosition([0, 0]);
+  }
 }

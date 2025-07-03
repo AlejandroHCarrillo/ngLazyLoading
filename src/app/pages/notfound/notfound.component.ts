@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -7,6 +8,11 @@ import { RouterLink } from '@angular/router';
   templateUrl: './notfound.component.html',
   styles: ``
 })
-export class NotfoundComponent {
+export class NotfoundComponent implements OnInit {
 
+  constructor(private viewportScroller: ViewportScroller) {}
+
+  ngOnInit(): void {
+    this.viewportScroller.scrollToPosition([0, 0]);
+  }
 }

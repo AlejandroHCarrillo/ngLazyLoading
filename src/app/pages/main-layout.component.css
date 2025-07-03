@@ -5,6 +5,13 @@ body {
     margin: 0;
     padding: 0;
 }
+.sticky-topbar{
+  position: sticky;
+  top: 0;
+  background-color: white; /* o el color que prefieras */
+  z-index: 1000;            /* asegúrate de que esté por encima de otros elementos */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* opcional: sombra al hacer scroll */
+}
 
 header, footer {
     background-color: #f8f9fa;
@@ -39,9 +46,8 @@ header, footer {
 
 main {
     width: 100%;
-    padding: 1em;
-    margin:0 auto;
     padding: 0;
+    margin: .5rem;
 }
 
 .right-section {

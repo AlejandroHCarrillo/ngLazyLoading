@@ -1,0 +1,14 @@
+.square-card {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.square-card img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.banner{
+    width: 99%;
+}

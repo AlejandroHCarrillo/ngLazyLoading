@@ -5,7 +5,7 @@ import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-left-menu',
-  imports: [RouterLink, NgFor, NgIf],
+  imports: [RouterLink],
   
   templateUrl: './left-menu.component.html',
   styleUrl: './left-menu.component.css'

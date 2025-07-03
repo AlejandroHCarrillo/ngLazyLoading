@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-morosos-list',
@@ -6,6 +7,11 @@ import { Component } from '@angular/core';
   templateUrl: './morosos-list.component.html',
   styleUrl: './morosos-list.component.css'
 })
-export class MorososListComponent {
+export class MorososListComponent implements OnInit {
 
+  constructor(private viewportScroller: ViewportScroller) {}
+
+  ngOnInit(): void {
+    this.viewportScroller.scrollToPosition([0, 0]);
+  }
 }
